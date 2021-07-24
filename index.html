@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<head>
+	<title>
+	CoWin Broker
+	</title>
+	<style>
+		:root {
+  			--main-bg-color: #1A181B;
+			--title-color: #23B5D3;
+			--sessions-bg-color: #564D65;
+			--sessions-info-color: #05F140;
+			--slots-in-session-color: #3E8989;
+			vaccine-cost-color: #2CDA9D;
+		}
+		input[type=number]{
+			width: 50%;
+			padding: 12px 20px;
+ 			margin: 8px 0;
+			box-sizing: border-box;
+			background-color: #333333;
+		  	border: 2px solid #b734eb;
+		  	border-radius: 4px;
+			letter-spacing: 3px;
+			transition: width 0.4s ease-in-out;
+			transition: background-color 0.33 ease-in-out;
+			width: 75%;
+		  background-color: #333333;
+			border: 2px solid #b734eb;
+			color: #EEEEEE;
+			font-family: sans-serif;
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+			/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+		button{
+			background-color: #564D65;
+			 border: none;
+			  color: white;
+			  padding: 12px 32px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  cursor: pointer;
+		}
+		body{
+			background-color: var(--main-bg-color);
+		}
+		#title{
+			text-align:center;
+			font-family:sans-serif;
+			color:var(--title-color);
+			font-size: 3em;
+		}
+		#site-info{
+			text-align: center;
+			font-size: 1.5em;
+			font-family: sans-serif;
+			color: #C2E1C2 ;
+			margin-bottom : 2em;
+		}
+		.sessions{
+			text-align: center;
+			border-style: inset;
+			border-radius: 3px;
+			display: block;
+			padding: 1em;
+			background-color: var(--sessions-bg-color);
+			color: #EEEEEE;
+			font-size: 1.5em;
+		}
+		#input{
+			margin: 0 auto;
+			
+		}
+		.container{
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.sessionhead{
+			font-size: 1.5em;
+			font-family:sans-serif;
+			color: var(--sessions-info-color);
+		}
+		.slothead{
+			font-size: 1.2em;
+			font-family: sans-serif;
+			color: var(--slots-in-session-color);
+		}
+		.vaccine-cost-head{
+			color: var(--vaccine-cost-color);
+			font-size: 1.2em;
+			font-family: sans-serif;
+		}
+		.cutter{
+			flex-basis: 100%
+		}
+		#search-count{
+			color: white;
+			text-align:center;
+			font-weight:lighter;
+			font-family: sans-serif;
+		}#output{
+			font-family: Georgia, serif;
+			color: white;
+			text-align:center;
+			font-weight:bold;
+		}
+	</style>
+	<script src="scripts/search.js"></script>
+</head>
+	<body>
+		<div>
+			<h1 id="title">
+				Broker for Vaccine Info 
+			</h1>
+		</div>
+		<div  id="site-info" >
+			Searches for COVID-19 Vaccine Slots in India. If not Found, tries continuously until the tab is closed.	
+		</div>
+		
+		<div class="container">
+		
+		<div id="input" >
+		<label for="pincode">
+		<input type="number" id="pincode" placeholder="Pincode" name="pincode" value=110029 >
+		</label>
+		<label for='search'>
+			<button id="search" onclick="search()">Go</button>
+		</label>
+		</div>
+			</div>
+		<div class="container" id="sessions-container" >
+		<div id="output"></div>	
+		</div>
+		
+		
+		<div id="search-count"></div>
+	</body>
